@@ -41,6 +41,30 @@ class Solution:
                 l.append(d)
                 d=d-1
         l.append(i)        
-        return(l)        
-            
+        return(l)     
+======= = = =     ==============================================================
+class Solution {
+public:
+    vector<int> diStringMatch(string S) {
+        int i=0;
+        int d=S.size();
+        vector<int> v;
+        for(int j=0;j< S.size();j++)
+        {
+            if (S[j]=='I')
+            {
+                v.push_back(i);
+                i=i+1;
+            }
+            else
+            {
+                v.push_back(d);
+                d=d-1;
+            }
+                    }
+        v.push_back(i) ;      
+        return(v) ;
+        
+    }
+};
         
