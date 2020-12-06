@@ -59,5 +59,34 @@ class Solution:
                 j+=1  
             if j==len(target):
                 break
-        return l        
+        return l   
+     ===============================================================
+     
+     
+     
+     class Solution {
+public:
+    vector<string> buildArray(vector<int>& target, int n) {
+        vector<string> v1;
+        int j=0;
+        for(int i=1;i<n+2;i++)
+        {
+            if (i!=target[j])
+            {
+                v1.push_back("Push");
+                v1.push_back("Pop");
+            }
+            else{
+               v1.push_back("Push");
+                j++;
+                
+            }
+            if (j==target.size())
+                break;
+        }
+        return(v1);
+        
+    }
+};
+
         
