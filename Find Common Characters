@@ -38,3 +38,15 @@ class Solution:
 
         return res
              
+======================================================================
+
+
+from collections import Counter
+
+class Solution:
+    def commonChars(self, A: List[str]) -> List[str]:
+        return sum([[letter] * count for letter, count in reduce(lambda a, b: {i: min(a[i], b.get(i, 0)) for i in a}, [Counter(i) for i in A]).items()], [])
+        
+        
+==============================================================================
+
