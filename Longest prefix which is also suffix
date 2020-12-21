@@ -1,0 +1,42 @@
+/*
+
+Given a string s, find length of the longest prefix which is also suffix. The prefix and suffix should not overlap.
+Examples: 
+ 
+
+Input : aabcdaabc
+Output : 4
+The string "aabc" is the longest
+prefix which is also suffix.
+
+Input : abcab
+Output : 2
+
+Input : aaaa
+Output : 2
+*/
+
+============================================================
+
+
+
+ans=""
+if len(s)<2:
+    print(0)
+else:    
+    c=0
+    for i in s:
+        ans+=i
+        if s.count(ans)>=2:
+            c+=1
+            continue
+        else:
+            ans=ans[-2]
+            break
+    print(c) 
+============================================================
+import re
+ 
+s = "ABCABCABCABCABC" # Example input
+ 
+print(len(re.findall(r'^(\w*).*\1$',s)[0]))
