@@ -1,0 +1,34 @@
+Given two strings s and t , write a function to determine if t is an anagram of s.
+
+Example 1:
+
+Input: s = "anagram", t = "nagaram"
+Output: true
+Example 2:
+
+Input: s = "rat", t = "car"
+Output: false
+Note:
+You may assume the string contains only lowercase alphabets.
+
+=============================================================
+
+
+
+import string
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return {k:s.count(k) for k in set(s)} == {
+            k:t.count(k) for k in set(t)}
+================================================================
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        count_s = collections.Counter(s)
+        count_t = collections.Counter(t) 
+        return count_s == count_t 
+        
+==================================================================
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return Counter(s) == Counter(t)
