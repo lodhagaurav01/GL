@@ -89,4 +89,21 @@ public:
                 r=r-1
         return mxa        
         [O(n)]
+        =====================================================================================
+        class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        maximum = 0
+        inner_node = 0
+        outer_node = len(height)-1
+        
+        while outer_node > inner_node:
+            if height[inner_node] >= height[outer_node]:
+                volume = (outer_node - inner_node)*height[outer_node]
+                outer_node -= 1
+            else:
+                volume = (outer_node - inner_node)*height[inner_node]
+                inner_node += 1
+            if maximum < volume:
+                maximum = volume
+        return maximum
         
