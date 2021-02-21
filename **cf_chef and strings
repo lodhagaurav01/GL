@@ -1,0 +1,37 @@
+Chef is playing Letter Problem with his son. In this Game, Chef will provide two Strings S1 and S2 of length l and m respectively, and he want his son to find number of different characters of s1 that are not present in s2 and vice versa.
+
+Input:
+First line will contain T, number of testcases. Then the testcases follow.
+Each testcase contains of a two line of input,
+1st line contains Strings s1. of length l.
+2nd line contains Strings s2. of length m
+Output:
+For each testcase, output in a single line answer total number of different characters of s1 that are not present in s2 and vice versa.
+
+Constraints
+1≤T≤100
+1≤L,M≤100000
+Sample Input:
+1
+abbdfga
+accfdkop
+Sample Output:
+6
+EXPLANATION:
+b, g of s1. are not present in s2 and c, k, o, p of s2 are not present in s1.
+
+=================================================================================
+import numpy as np
+n=int(input())
+
+while n>0:
+    n=n-1
+    a=[]
+    b=[]
+    h=0
+    a=list(input())
+    b=list(input())
+    
+
+    h+=len(np.setdiff1d(b,a))+len(np.setdiff1d(a,b))
+    print(h)
