@@ -1,0 +1,45 @@
+Solve the problem based on the number of special characters.If the count is odd print first odd digits and next even digits(and viceversa) in the same series present in the string.
+
+Input Format
+
+First line consist of string with alphabets,numbers and special characters.
+
+Constraints
+
+No Constraints
+
+Output Format
+
+Consist of Numbers alone.
+
+Sample Input 0
+
+abc@147#25%gd&b
+Sample Output 0
+
+42175
+
+=======================================================
+
+
+n=input()
+c=0
+e=[]
+o=[]
+
+for i in n:
+    if i.isalnum():
+        c+=1
+    if i.isdigit():
+        if int(i)%2==0:
+            e.append(i)
+        else:
+            o.append(i)
+            
+if (len(n)-c)%2==0:
+    l=e[:]+o[:]
+else:
+    l=o[:]+e[:]
+ 
+print(''.join(l)) 
+    
