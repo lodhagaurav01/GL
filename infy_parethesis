@@ -1,0 +1,35 @@
+n=input()
+
+def check(n):
+    stack=[]
+    
+    for i in n:
+        if i=='{' or i=='[' or i=='(':
+            stack.append(i)
+            
+            continue
+        
+        if len(stack)==0:
+            return False
+        x=stack.pop()
+        if i==']' and x=='[':
+            continue
+        elif i=='}' and x=='{':
+            continue
+        elif i==')' and x=='(':
+            continue
+        else:
+            return False
+    
+    if len(stack)==0:
+        return True
+    else:
+        return False
+if (check(n)):
+    print("True")
+else:
+    print("false")
+
+        
+        
+
