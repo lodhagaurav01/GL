@@ -1,0 +1,56 @@
+Reverse the given input string without changing the positions of the special characters.
+
+Input Format
+
+First line consist of string with special characters
+
+Constraints
+
+No Constraints
+
+Output Format
+
+First line consist of reverse of the string without changing the positions of special characters.
+
+Sample Input 0
+
+abcd@12#ef$k
+Sample Output 0
+
+kfe2@1d#cb$a
+
+
+code::
+
+import re
+n=input()
+lst=re.findall("[a-zA-z0-9]",n)
+lst.reverse()
+for i in range(len(n)):
+    if not n[i].isalnum():
+        lst.insert(i,n[i])
+print(''.join(lst))
+
+==============================================================
+
+
+ following code partially executed
+n=input()
+l=list(n)
+
+j=len(l)
+index=-1
+for i in range(j-1,int((j-1)/2),-1):
+    
+    if l[i].isalnum():
+        t=l[i]
+        
+        while True:
+            index+=1
+            print(index)
+            if l[index].isalnum():
+                l[i]=l[index]
+                l[index]=t
+                break
+print("".join(l))            
+
