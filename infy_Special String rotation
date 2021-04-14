@@ -1,0 +1,44 @@
+Every string is associated with the number separated by colon(:).Task is to rotate the string based on the number.
+If the sum of square of digits is even then rotate the string right by 1 position else rotate the string left by 2 position.
+
+Input Format
+
+Input consist of many strings seperated by comma(,) in single line.
+
+Constraints
+
+No constraints.
+
+Output Format
+
+Consist of rotated strings separated by spaces.
+
+Sample Input 0
+
+rhdt:246,ghftd:1246
+Sample Output 0
+
+trhd ftdgh
+Explanation 0
+
+First case:2*2+4*4+6*6=84 which is even so rotate string right by 1 so ”rhdt” will be “trhd”.
+
+Second case : 1*1+2*2+4*4+6*6=85 which is odd so rotate string left by 2 so “ghftd” will be “ftdgh”.
+
+==================================================================
+n=input().split(',')
+for i in n:
+    l=i.split(':')
+    s1=l[0]
+    t=l[1]
+    s=0
+    for j in t:
+        s+=int(j)**2
+    if s%2==0:
+        res=str(s1[-1:]+s1[:-1])
+    else:
+        res=str(s1[2:]+s1[:2])
+    print(res,end=" ")        
+        
+
+
