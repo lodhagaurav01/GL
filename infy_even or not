@@ -1,0 +1,60 @@
+
+
+
+A string which is a mixture of letter and integer and special char from which find the largest even number from the available digit after removing the duplicates.
+
+Input Format
+
+First line consist of input string.
+
+Constraints
+
+No constraints
+
+Output Format
+
+Consist of largest even number formed with available digits if its not possible then print -1.
+
+Sample Input 0
+
+ infosys@337
+Sample Output 0
+
+-1
+Sample Input 1
+
+Hello#81@21349237
+Sample Output 1
+
+9874312
+
+
+
+
+
+
+
+
+
+
+
+===============================================================================
+import re
+from itertools import permutations as p
+n=input()
+l=list(re.findall('[0-9]',n))
+
+l1=list(set(l))
+if len(l)==0:
+    print(-1)
+else:
+        
+    perm=list(p(l1,len(l1)))
+    
+    m=-1
+    for i in perm:
+        t=int(''.join(i))
+        if t%2==0:
+            m=max(m,t)
+    print(m)        
+
