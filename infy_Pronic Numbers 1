@@ -1,0 +1,55 @@
+Given a integer we should divide the total number into substrings and we should verify each num is pronic num or not if pronic we should print that nums in the sorted order
+
+Input Format
+
+First line consist of numbers
+
+Constraints
+
+No constraints
+
+Output Format
+
+Consist of pronic numbers seperated by spaces in the sorted order
+
+Sample Input 0
+
+272
+Sample Output 0
+
+2 72 272
+Explanation 0
+
+Output consist of distinct possible pronic numbers in the given input
+
+
+=========================================================
+
+import math
+n=input()
+perm=[]
+
+def check(x):
+    i=0
+    while ( i <= (int)(math.sqrt(x)) ) :
+        if x==(i*(i+1)):
+            return True
+        i+=1    
+    return False    
+
+
+l3 =[n[i: j] for i in range(len(n))
+          for j in range(i + 1, len(n) + 1)]
+    
+res=[]
+for i in l3:
+    t=int(''.join(i))
+    if check(t):
+        res.append(t)
+
+res1=list(set(res))
+res1.sort()
+print(*res1)        
+        
+        
+        
