@@ -55,14 +55,23 @@ printf("%c",s[i]);
 }
 return 0; 
 }
+===========================================================================
 
-//or in Partially ececuted in python
-/*
-s=input()
-i=s.rfind('username')
-d=s[i:].split('&')
-for i in range(5):
-    keyvalue=d[i].split('=')
-    print(keyvalue[0]+' : '+keyvalue[1])
- 
-*/ 
+###in python##########
+
+n=input()
+
+
+t1=n.index('username')
+t2=n.index('pwd')
+t3=n.index('profile')
+t4=n.index('role')
+t5=n.index('key')
+
+    
+
+print('username:',n[t1+9:t2-1])
+print('pwd:', n[t2+4:t3-1])
+print('profile:', n[t3+8:t4-1])
+print('role:', n[t4+5:t5-1])
+print('key:', n[t5+4:])
