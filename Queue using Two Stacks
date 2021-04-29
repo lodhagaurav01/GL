@@ -1,0 +1,45 @@
+Output Format
+
+For each query of type , print the value of the element at the front of the queue on a new line.
+
+Sample Input
+
+STDIN   Function
+-----   --------
+10      q = 10 (number of queries)
+1 42    1st query, enqueue 42
+2       dequeue front element
+1 14    enqueue 42
+3       print the front element
+1 28    enqueue 28
+3       print the front element
+1 60    enqueue 60
+1 78    enqueue 78
+2       dequeue front element
+2       dequeue front element
+
+Sample Output
+
+14
+14
+
+https://www.hackerrank.com/challenges/queue-using-two-stacks/problem
+=======================================================
+
+n=int(input())
+s1=[]
+s2=[]
+for i in range(n):
+    t=list(map(int,input().split()))
+    if t[0]== 1:
+        s1.append(t[1])
+    elif t[0]==2:
+        if not s2:
+            while s1:
+                s2.append(s1.pop())
+        s2.pop()
+    else:
+        if not s2:
+            while s1:
+                s2.append(s1.pop())
+        print(s2[-1])
