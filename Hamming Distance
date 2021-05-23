@@ -1,0 +1,78 @@
+The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
+
+Given two integers x and y, return the Hamming distance between them.
+
+ 
+
+Example 1:
+
+Input: x = 1, y = 4
+Output: 2
+Explanation:
+1   (0 0 0 1)
+4   (0 1 0 0)
+       ↑   ↑
+The above arrows point to positions where the corresponding bits are different.
+Example 2:
+
+Input: x = 3, y = 1
+Output: 1
+ 
+
+Constraints:
+
+0 <= x, y <= 231 - 1
+===============================================================
+
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        def toBinary(num):
+            bits = []
+            while num // 2 != 0:
+                bits.append(num%2)
+                num //= 2
+            bits.append(num%2)  # don't forget to add the last bit
+            bits.reverse()
+            print(bits)
+            return bits
+        count = 0
+        bits_x = toBinary(x)
+        bits_y = toBinary(y)
+        if len(bits_x) < len(bits_y):
+            bits_x, bits_y = bits_y, bits_x
+        bits_y = [0]*(len(bits_x)-len(bits_y)) + bits_y
+        print(bits_x, bits_y)
+        for i in range(len(bits_x)):
+            if bits_x[i] != bits_y[i]:
+                count += 1
+        return count
+
+
+
+=====================================================
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        x=(bin(x).replace("0b", ""))
+        y=(bin(y).replace("0b", ""))
+        mn=min(len(x),len(y))
+        count=0
+        for i in range(1,mn+1):
+            if x[-i]!=y[-i]:
+                count+=1
+        if len(x)==len(y):
+            return(count)
+        elif len(x)>len(y):
+            n=len(x)
+            t=x[:n-i]
+    
+            count+=t.count('1')
+            return(count)
+        else:
+            n=len(y)
+            t=y[:n-i]
+    
+            count+=t.count('1')
+            return (count)
+        
+        
+        
