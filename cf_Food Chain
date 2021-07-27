@@ -1,0 +1,15 @@
+https://www.codechef.com/problems/FODCHAIN
+
+# cook your dish here
+n=int(input())
+while n>0:
+    n-=1
+    a,b=map(int,input().split())
+    t=a//b
+    c=1
+    while t>0:
+        a=t
+        t=a//b
+        c+=1
+        
+    print(c)
