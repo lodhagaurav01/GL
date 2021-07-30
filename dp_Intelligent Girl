@@ -1,0 +1,14 @@
+https://www.hackerearth.com/practice/algorithms/dynamic-programming/introduction-to-dynamic-programming-1/practice-problems/algorithm/intelligent-girl-1/
+
+
+solution:
+  s=input()
+  even=['2','4','6','8']
+  c=0
+  l=[]
+  for i in range(len(s)-1,-1,-1):
+      if s[i] in even:
+          c+=1
+      l.append(c)
+  l.reverse()
+  print(*l)  
