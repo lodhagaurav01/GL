@@ -1,0 +1,13 @@
+#   https://www.hackerrank.com/challenges/draw-the-triangle-2/problem?h_r=next-challenge&h_v=zen
+
+
+
+sol:
+
+set @t:=0;
+select repeat('* ',@t:=@t+1)
+from INFORMATION_SCHEMA.TABLES
+Where @t<20;
+
+
+=========================
